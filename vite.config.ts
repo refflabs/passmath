@@ -5,9 +5,11 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   base: '/passmath/',
   plugins: [react()],
-  test: {
-    environment: 'node',
-    globals: true,
-    include: ['src/tests/**/*.test.ts', 'src/tests/**/*.test.tsx'],
-  },
+  ...({
+    test: {
+      environment: 'node',
+      globals: true,
+      include: ['src/tests/**/*.test.ts', 'src/tests/**/*.test.tsx'],
+    },
+  } as any),
 })

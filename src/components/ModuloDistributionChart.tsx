@@ -10,10 +10,9 @@ import { toFixed } from '../utils/formatting';
 
 interface ModuloDistributionChartProps {
   moduloAnalysis: ModuloAnalysis;
-  password: string;
 }
 
-export default function ModuloDistributionChart({ moduloAnalysis, password }: ModuloDistributionChartProps) {
+export default function ModuloDistributionChart({ moduloAnalysis }: ModuloDistributionChartProps) {
   const { residues, uniqueResidueRatio, bucketCounts, bucketEntropy, normalizedBucketEntropy, score, status } = moduloAnalysis;
 
   const statusColor = status === 'Relatif Tersebar' ? 'text-green-400' : 'text-orange-400';

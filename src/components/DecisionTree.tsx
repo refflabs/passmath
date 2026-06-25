@@ -47,7 +47,6 @@ export default function DecisionTree({ finalScore, securityStatus }: DecisionTre
         {/* Node Start */}
         <TreeNode
           label="Mulai"
-          type="start"
           active
           description="Final Score masuk ke evaluasi pohon keputusan"
         />
@@ -178,8 +177,8 @@ export default function DecisionTree({ finalScore, securityStatus }: DecisionTre
 
 // ============ Sub-komponen pohon keputusan ============
 
-function TreeNode({ label, type, active, description }: {
-  label: string; type: 'start'; active: boolean; description: string;
+function TreeNode({ label, active, description }: {
+  label: string; active: boolean; description: string;
 }) {
   return (
     <div className={`flex flex-col items-center ${active ? '' : 'opacity-40'}`}>

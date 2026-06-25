@@ -30,7 +30,6 @@ import DisclaimerCard from './components/DisclaimerCard';
 
 export default function App() {
   const [result, setResult] = useState<PasswordAnalysisResult | null>(null);
-  const [analysisPassword, setAnalysisPassword] = useState('');
   const [isEmpty, setIsEmpty] = useState(false);
 
   const handleAnalyze = useCallback((password: string) => {
@@ -44,13 +43,11 @@ export default function App() {
     const analysisResult = analyzePassword(password);
     if (analysisResult) {
       setResult(analysisResult);
-      setAnalysisPassword(password);
     }
   }, []);
 
   const handleReset = useCallback(() => {
     setResult(null);
-    setAnalysisPassword('');
     setIsEmpty(false);
   }, []);
 
@@ -207,7 +204,7 @@ export default function App() {
             {/* 7. Modulo Distribution */}
             <section id="modulo" aria-labelledby="modulo-heading">
               <h2 id="modulo-heading" className="sr-only">Distribusi Modulo</h2>
-              <ModuloDistributionChart moduloAnalysis={result.moduloAnalysis} password={analysisPassword} />
+              <ModuloDistributionChart moduloAnalysis={result.moduloAnalysis} />
             </section>
 
             {/* 8. Hybrid Scoring */}
