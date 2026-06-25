@@ -50,7 +50,6 @@ src/
 │   ├── GcdAnalysisCard.tsx     # Algoritma GCD Euclidean
 │   ├── ModuloDistributionChart.tsx  # Distribusi modulo
 │   ├── ScoringCard.tsx         # Hybrid Scoring
-│   ├── VerificationCodeCard.tsx  # K mod 97
 │   ├── BruteForceCard.tsx      # Simulasi brute force
 │   ├── DecisionTree.tsx        # Pohon keputusan
 │   ├── RecommendationCard.tsx  # Rekomendasi perbaikan
@@ -74,7 +73,7 @@ src/
 │   ├── moduloDistribution.test.ts
 │   └── scoring.test.ts
 ├── App.tsx                  # Komponen utama
-└── main.tsx                 # Entry point
+│   └── main.tsx             # Entry point
 ```
 
 ---
@@ -121,22 +120,17 @@ RS = (GCD Score × 0.5) + (MDS × 0.5)
 Final Score = (ES × 0.6) + (RS × 0.4)
 ```
 
-### 8. Kode Verifikasi
-```
-K mod 97 = N^L mod 97    (modular exponentiation)
-```
-
 ---
 
 ## 🧪 Test Case
 
-| Password | L | N | GCD | K mod 97 | Status |
-|---|---|---|---|---|---|
-| `Informatika#2026` | 16 | 88 | 1 | 35 | Sangat Aman |
-| `aaaa` | 4 | 26 | 97 | — | Tidak Aman |
-| `ABC123` | 6 | 36 | — | — | Tidak Aman |
-| `A1#a1#` | 6 | 88 | — | — | Kurang Aman |
-| *(kosong)* | 0 | — | — | — | Error (null) |
+| Password | L | N | GCD | Status |
+|---|---|---|---|---|
+| `Informatika#2026` | 16 | 88 | 1 | Sangat Aman |
+| `aaaa` | 4 | 26 | 97 | Tidak Aman |
+| `ABC123` | 6 | 36 | — | Tidak Aman |
+| `A1#a1#` | 6 | 88 | — | Kurang Aman |
+| *(kosong)* | 0 | — | — | Error (null) |
 
 ---
 
@@ -146,9 +140,8 @@ K mod 97 = N^L mod 97    (modular exponentiation)
 2. Entropy adalah entropy teoretis, bukan empiris
 3. GCD bukan uji randomness kriptografis
 4. Distribusi modulo bersifat heuristik pada password pendek
-5. K mod 97 bukan hash kriptografis
-6. Tidak mempertimbangkan dictionary attack, kebocoran, atau social engineering
-7. Dibuat untuk demonstrasi Matematika Diskrit, bukan audit keamanan profesional
+5. Tidak mempertimbangkan dictionary attack, kebocoran, atau social engineering
+6. Dibuat untuk demonstrasi Matematika Diskrit, bukan audit keamanan profesional
 
 ---
 
